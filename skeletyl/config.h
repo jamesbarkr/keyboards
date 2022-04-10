@@ -1,0 +1,32 @@
+#pragma once
+
+#undef MATRIX_ROW_PINS
+#undef MATRIX_COL_PINS
+#undef DIODE_DIRECTION
+#undef DEVICE_VER
+#undef VENDOR_ID
+#undef PRODUCT_ID
+#undef MANUFACTURER
+#undef PRODUCT
+
+#define DEVICE_VER 0x0001
+#define VENDOR_ID 0xA8F8
+#define PRODUCT_ID 0x1830
+#define MANUFACTURER Qnr
+#define PRODUCT Skeletyl
+
+#define USE_I2C
+#define SPLIT_USB_DETECT
+
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
+#define BOOTMAGIC_LITE_ROW_RIGHT 4
+#define BOOTMAGIC_LITE_COL_RIGHT 0
+
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 5
+#define DIODE_DIRECTION COL2ROW
+#define MATRIX_ROW_PINS { F7, B1, B3, B2 }
+#define MATRIX_COL_PINS { D4, C6, D7, E6, B4 }
+#define MATRIX_ROW_PINS_RIGHT { B4, E6, D7, C6 }
+#define MATRIX_COL_PINS_RIGHT { F6, F7, B1, B3, B2 }

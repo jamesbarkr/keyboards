@@ -1,0 +1,32 @@
+#pragma once
+
+#undef MATRIX_ROW_PINS
+#undef MATRIX_COL_PINS
+#undef DIODE_DIRECTION
+#undef DEVICE_VER
+#undef VENDOR_ID
+#undef PRODUCT_ID
+#undef MANUFACTURER
+#undef PRODUCT
+#undef BOOTMAGIC_LITE_ROW
+#undef BOOTMAGIC_LITE_COLUMN
+
+#define DEVICE_VER 0x0001
+#define VENDOR_ID 0xA8F8
+#define PRODUCT_ID 0x1830
+#define MANUFACTURER Qnr
+#define PRODUCT Dactyl
+
+#define USE_SERIAL
+#define MASTER_LEFT
+
+#define BOOTMAGIC_LITE_ROW 1
+#define BOOTMAGIC_LITE_COLUMN 1
+
+#define DIODE_DIRECTION COL2ROW
+#define MATRIX_ROW_PINS { B6, B2, B3, B1, F7, F6 }
+#define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5 }
+#define MATRIX_ROW_PINS_RIGHT { B5, B4, E6, D7, C6, D4 }
+#define MATRIX_COL_PINS_RIGHT { F6, B2, B3, B1, F7, B6 }
+#define ENCODERS_PAD_A_RIGHT { D1 }
+#define ENCODERS_PAD_B_RIGHT { F5 }
