@@ -19,5 +19,4 @@ COMBO_ENABLE = no			# Key combos
 SRC += ./connorbarkr.c \
 	   ./features/caps_word.c \
 	   ./features/custom_shift_keys.c \
-	   ./features/os_mode.c \
-	#    ./features/layer_lock.c 
+	   ./features/os_mode.c

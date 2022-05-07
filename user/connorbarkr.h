@@ -40,6 +40,7 @@ enum custom_keycodes {
 enum layer_names {
 	_COLEMAK,
 	_QWERTY,
+	_GAME,
 	_NAV,
 	_SYM,
 	_NUM,

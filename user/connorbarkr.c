@@ -88,43 +88,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 	return process_record_keymap(keycode, record);
 }
 
-// #define THUMB_EXTRA 50
-// #define DIGIT_EXTRA 75
-
-// uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
-// {
-// 	switch (keycode)
-// 	{
-// 	case GUI_Z:
-// 	case ALT_X:
-// 	case CTL_C:
-// 	case GUI_SLSH:
-// 	case ALT_DOT:
-// 	case CTL_COMM:
-// 	case ALT_Z:
-// 	case CTL_X:
-// 	case GUI_C:
-// 	case ALT_SLSH:
-// 	case CTL_DOT:
-// 	case GUI_COMM:
-// 		return TAPPING_TERM + DIGIT_EXTRA;
-// 	case DAC_BSPC:
-// 	case DAC_TAB:
-// 	case DAC_SPC:
-// 	case WIN_BSPC:
-// 	case WIN_TAB:
-// 	case WIN_SPC:
-// 	case WIN_ENT:
-// 	case MAC_BSPC:
-// 	case MAC_TAB:
-// 	case MAC_SPC:
-// 	case MAC_ENT:
-// 		return TAPPING_TERM + THUMB_EXTRA;
-// 	default:
-// 		return TAPPING_TERM;
-// 	}
-// }
-
 void matrix_scan_user(void) {
 	caps_word_task();
 }

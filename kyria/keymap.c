@@ -104,6 +104,9 @@ bool oled_task_user(void) {
             case _QWERTY:
                 oled_write_P(PSTR("QWERTY"), false);
                 break;
+			case _GAME:
+                oled_write_P(PSTR("Gaming"), false);
+                break;
             default:
                 oled_write_P(PSTR("ERROR"), false);
         }
