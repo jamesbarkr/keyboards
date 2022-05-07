@@ -1,9 +1,10 @@
 #undef RGBLED_NUM
 #undef RGBLED_SPLIT
 
-#define DEFAULT_OS MACOS
+#define DEFAULT_OS WINDOWS
+
 #define RGBLIGHT_SPLIT
 #define RGBLED_SPLIT \
     { 8, 8 }
 #define RGBLED_NUM 16
-#define RGBLIGHT_LIMIT_VAL 100
+#define RGBLIGHT_DEFAULT_HUE 17

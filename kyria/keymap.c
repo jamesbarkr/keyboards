@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //	  		-------------------------------------------------			-------------------------------------------------
             QC_Z,     QC_X,     QC_C,     KC_D,     KC_V,               KC_K,     KC_H,     QC_COMM,  QC_DOT,  QC_SLSH,
 //	  		-------------------------------------------------			-------------------------------------------------
-            XXXXXX,   QC_OS,    TD(OSFT), QC_BSPC,  TD(SWAP),           QC_TAB,   QC_SPC,   QC_ENT,   XXXXXX,  XXXXXX
+            KC_MPLY,  QC_OS,    TD(OSFT), QC_BSPC,  TD(SWAP),           QC_TAB,   QC_SPC,   QC_ENT,   DF(1),   RGB_TOG
 //	  							-----------------------------			-----------------------------
 	),
 	[_QWERTY] = LAYOUT_qnr_kyria(
@@ -18,20 +18,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //	  		-------------------------------------------------			-------------------------------------------------
 			KC_A,     KC_S,     KC_D,     KC_F,     KC_G,               KC_H,     KC_J,     KC_K,     KC_L,    KC_SCLN,
 //	  		-------------------------------------------------			-------------------------------------------------
-            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,               KC_N,     KC_M,     KC_COMM,  KC_DOT,  KC_SLSH,
+            QC_Z,     QC_X,     QC_C,     KC_V,     KC_B,               KC_N,     KC_M,     QC_COMM,  QC_DOT,  QC_SLSH,
 //	  		-------------------------------------------------			-------------------------------------------------
-            ______,   ______,   ______,   ______,   ______,             ______,   ______,   ______,   ______,  ______
+            ______,   ______,   ______,   ______,   ______,             ______,   ______,   ______,   DF(2),   ______
+//	  							-----------------------------			-----------------------------
+	),
+	[_GAME] = LAYOUT_qnr_kyria(
+//			-------------------------------------------------			-------------------------------------------------
+        	KC_ESC,   KC_Q,     KC_W,     KC_E,     KC_R,               XXXXXX,   XXXXXX,   KC_UP,    XXXXXX,   XXXXXX,
+//	  		-------------------------------------------------			-------------------------------------------------
+			KC_TAB,   KC_A,     KC_S,     KC_D,     KC_F,               XXXXXX,   KC_LEFT,  KC_DOWN,  KC_RIGHT, XXXXXX,
+//	  		-------------------------------------------------			-------------------------------------------------
+            KC_LCTL,  QC_Z,     QC_X,     KC_C,     KC_V,               XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,
+//	  		-------------------------------------------------			-------------------------------------------------
+            ______,   ______,   KC_LSFT,  KC_SPC,   KC_TAB,             QC_TAB,   XXXXXX,   XXXXXX,   DF(0),    ______
 //	  							-----------------------------			-----------------------------
 	),
 	[_NAV] = LAYOUT_qnr_kyria(
 //	  		-------------------------------------------------			-------------------------------------------------
-			XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,             QC_CUT,   QC_CPY,   KC_UP,    QC_PAS,   KC_PGUP,
+			QC_DLIN,  QC_UCRS,  LINE_UP,  QC_CPAL,  QC_ACU,             QC_CUT,   QC_CPY,   KC_UP,    QC_PAS,   KC_PGUP,
 //	  		-------------------------------------------------			-------------------------------------------------
-			XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,             QC_LWRD,  KC_LEFT,  KC_DOWN,  KC_RIGHT, QC_RWRD,
+			KC_HOME,  QC_BACK,  LINE_DN,  QC_FOR,   KC_END,             QC_LWRD,  KC_LEFT,  KC_DOWN,  KC_RIGHT, QC_RWRD,
 //	  		-------------------------------------------------			-------------------------------------------------
-			QC_MOD3,  QC_MOD2,  QC_MOD1,  XXXXXX,   KC_LSFT,            QC_SAVE,  QC_UNDO,  KC_DOWN,  QC_REDO,  KC_PGDN,
+			QC_MOD3,  QC_MOD2,  QC_MOD1,  QC_LINE,  QC_ACD,             QC_PRNT,  QC_UNDO,  KC_DOWN,  QC_REDO,  KC_PGDN,
 //	  		-------------------------------------------------			-------------------------------------------------
-			XXXXXX,   XXXXXX,   KC_LSFT,  QC_WBSP,  NEXT_TAB,           KC_TAB,   ______,   KC_ENT,   XXXXXX,   XXXXXX
+			______,   ______,   KC_LSFT,  QC_WBSP,  KC_TAB,             XXXXXX,   ______,   XXXXXX,   ______,   ______
 //	  							-----------------------------			-----------------------------
 	),
 	[_SYM] = LAYOUT_qnr_kyria(
@@ -42,36 +53,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //	  		-------------------------------------------------			-------------------------------------------------
             KC_DLR,   KC_PERC,  KC_HASH,  KC_QUES,  KC_AMPR,            KC_PIPE,  KC_UNDS,  KC_PLUS,  KC_MINS,  KC_BSLS,
 //	  		-------------------------------------------------			-------------------------------------------------
-            XXXXXX,   XXXXXX,   XXXXXX,   KC_BSPC,  NEXT_TAB,           KC_TAB,   KC_SPC,   ______,   XXXXXX,   XXXXXX
+            ______,   ______,   PREV_TAB, KC_BSPC,  NEXT_TAB,           XXXXXX,   XXXXXX,   ______,   ______,   ______
 //	  							-----------------------------			-----------------------------
 	),
 	[_NUM] = LAYOUT_qnr_kyria(
 //	  		-------------------------------------------------			-------------------------------------------------
-			XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,             KC_PLUS,  KC_3,     KC_4,     KC_5,     KC_LT,
+			XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,             KC_PLUS,  KC_1,     KC_2,     KC_3,     KC_LT,
 //	  		-------------------------------------------------			-------------------------------------------------
-			XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,             KC_MINS,  KC_0,     KC_1,     KC_2,     KC_DOT,
+			XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,             KC_0,     KC_4,     KC_5,     KC_6,     KC_DOT,
 //	  		-------------------------------------------------			-------------------------------------------------
-			QC_MOD3,  QC_MOD2,  QC_MOD1,  XXXXXX,   XXXXXX,             KC_EQL,   KC_6,     KC_7,     KC_8,     KC_9,
+			QC_MOD3,  QC_MOD2,  QC_MOD1,  XXXXXX,   XXXXXX,             KC_MINS,  KC_7,     KC_8,     KC_9,     KC_EQL,
 //	  		-------------------------------------------------			-------------------------------------------------
-            XXXXXX,   XXXXXX,   XXXXXX,   ______,   XXXXXX,             KC_TAB,   KC_SPC,   KC_ENT,   XXXXXX,   XXXXXX
+            ______,   ______,   XXXXXX,   ______,   XXXXXX,             QC_MTAB,  KC_SPC,   KC_ENT,   ______,   ______
 //	  							-----------------------------			-----------------------------
 	),
 	[_MEDIA] = LAYOUT_qnr_kyria(
 //	  		-------------------------------------------------			-------------------------------------------------
-			QC_SLEP,  KC_F1,    KC_F2,    KC_F3,    KC_F4,              KC_VOLU,  KC_NO,    KC_NO,    KC_NO,	KC_NO,
+			QC_LOCK,  KC_F1,    KC_F2,    KC_F3,    KC_F4,              KC_VOLU,  XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX,
 //	  		-------------------------------------------------			-------------------------------------------------
 			XXXXXX,   KC_F5,    KC_F6,    KC_F7,    KC_F8,              KC_VOLD,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MSTP,
 //	  		-------------------------------------------------			-------------------------------------------------
-			XXXXXX,   KC_F9,    KC_F10,   KC_F11,   KC_F12,             KC_MUTE,  QC_PRNT,  QC_MOD1,  QC_MOD2,  QC_MOD3,
+			XXXXXX,   KC_F9,    KC_F10,   KC_F11,   KC_F12,             KC_MUTE,  KC_LSFT,  QC_MOD1,  QC_MOD2,  QC_MOD3,
 //	  		-------------------------------------------------			-------------------------------------------------
-            XXXXXX,   XXXXXX,   PHONE,    EMAIL,    XXXXXX,             ______,   XXXXXX,   XXXXXX,   XXXXXX,   XXXXXX
+            ______,   ______,   PHONE,    EMAIL,    XXXXXX,             ______,   XXXXXX,   XXXXXX,   ______,   ______
 //	  							-----------------------------			-----------------------------
 	),
 };
 
-void keyboard_post_init_user(void) {
-	rgblight_sethsv(HSV_GOLDENROD);
-}
+// void keyboard_post_init_user(void) {
+// 	rgblight_setrgb(255, 100, 0);
+// }
 
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
@@ -84,13 +95,13 @@ bool oled_task_user(void) {
         // clang-format on
 
         oled_write_P(qmk_logo, false);
-        oled_write_P(PSTR("\n\n"), false);
+        oled_write_P(PSTR("\n\n "), false);
 
         switch (get_highest_layer(default_layer_state)) {
-            case 0:
+            case _COLEMAK:
                 oled_write_P(PSTR("Colemak"), false);
                 break;
-            case 1:
+            case _QWERTY:
                 oled_write_P(PSTR("QWERTY"), false);
                 break;
             default:
@@ -103,7 +114,7 @@ bool oled_task_user(void) {
 			case WINDOWS:
                 oled_write_P(PSTR("Windows\n"), false);
                 break;
-            case 1:
+            case MACOS:
                 oled_write_P(PSTR("MacOS\n"), false);
                 break;
             default:
@@ -139,9 +150,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 1) {
         // Page up/Page down
         if (clockwise) {
-            tap_code(KC_PGUP);
+            tap_code(KC_WH_U);
         } else {
-            tap_code(KC_PGDN);
+            tap_code(KC_WH_D);
         }
     }
 	return false;

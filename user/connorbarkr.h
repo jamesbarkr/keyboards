@@ -22,10 +22,19 @@ enum custom_keycodes {
 	QC_UNDO,
 	QC_REDO,
 	QC_PRNT,
-	QC_SLEP,
+	QC_LOCK,
+	QC_MTAB,
 	QC_MOD1,
 	QC_MOD2,
 	QC_MOD3,
+	QC_LINE,
+	QC_DLIN,
+	QC_CPAL,
+	QC_UCRS,
+	QC_ACU,
+	QC_ACD,
+	QC_BACK,
+	QC_FOR,
 };
 
 enum layer_names {
@@ -60,7 +69,6 @@ typedef struct {
 // universal
 #define ______ KC_TRNS
 #define XXXXXX KC_NO
-#define GO_QWERT DF(1)
 #define LINE_UP LALT(KC_UP)
 #define LINE_DN LALT(KC_DOWN)
 #define NEXT_TAB LCTL(KC_TAB)
