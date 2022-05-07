@@ -17,6 +17,7 @@
 
 #define USE_I2C
 #define SPLIT_USB_DETECT
+#define EE_HANDS
 
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 0

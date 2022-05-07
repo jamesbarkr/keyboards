@@ -1,8 +1,9 @@
 USER = connorbarkr
 
-KEYBOARDS = dactyl skeletyl
+KEYBOARDS = dactyl skeletyl kyria
 PATH_dactyl = handwired/dactyl_manuform/5x6_5
 PATH_skeletyl = bastardkb/skeletyl
+PATH_kyria = splitkb/kyria
 
 all: $(KEYBOARDS)
 
