@@ -20,8 +20,12 @@ extern uint8_t NUM_OS_MODS;
 
 bool process_os_mode(uint16_t keycode, keyrecord_t* record, uint16_t os_mode_keycode);
 
+bool process_os_print(uint16_t keycode, keyrecord_t* record, uint16_t os_print_keycode);
+
 uint8_t get_os_mode(void);
 
 void set_os_mode(uint8_t mode);
 
 void cycle_os_mode(void);
+
+void print_os_mode(void);

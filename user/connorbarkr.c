@@ -16,7 +16,7 @@ const os_key_t os_keys[] = {
 	{QC_UNDO, LCTL(KC_Z), LGUI(KC_Z)},
 	{QC_REDO, RCS(KC_Z), RSG(KC_Z)},
 	{QC_PRNT, LGUI(LSFT(KC_S)), SCMD(KC_4)},
-	{QC_LOCK, LGUI(KC_K), LCTL(LGUI(KC_Q))},
+	{QC_LOCK, LGUI(KC_L), LCTL(LGUI(KC_Q))},
 	{QC_MTAB, KC_TAB, LGUI(KC_GRV)},
 	{QC_MOD1, KC_LCTL, KC_LGUI},
 	{QC_MOD2, KC_LALT, KC_LCTL},
@@ -44,8 +44,7 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_
 uint8_t NUM_OS_KEYS = sizeof(os_keys) / sizeof(os_key_t);
 uint8_t NUM_OS_MODS = sizeof(os_mods) / sizeof(os_key_t);
 
-__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record)
-{
+__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 	return true;
 }
 

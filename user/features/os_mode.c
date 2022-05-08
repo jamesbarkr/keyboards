@@ -44,8 +44,26 @@ bool process_os_mode(uint16_t keycode, keyrecord_t* record, uint16_t os_mode_key
 	return true;
 }
 
+bool process_os_print(uint16_t keycode, keyrecord_t* record, uint16_t os_print_keycode) {
+	if (keycode == os_print_keycode) {
+		if (record->event.pressed) {
+			print_os_mode();
+		}
+		return false;
+	}
+	return true;
+}
+
 uint8_t get_os_mode() {
 	return os_mode;
+}
+
+void print_os_mode() {
+	if (os_mode == WINDOWS) {
+		SEND_STRING("Windows");
+	} else {
+		SEND_STRING("MacOS");
+	}
 }
 
 void set_os_mode(uint8_t mode) {

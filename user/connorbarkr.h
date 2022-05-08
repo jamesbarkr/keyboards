@@ -12,6 +12,7 @@ enum custom_keycodes {
 	KC_UDIR,
 	KC_TEQ,
 	QC_OS,
+	QC_POS,
 	QC_CPY,
 	QC_PAS,
 	QC_CUT,

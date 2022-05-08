@@ -80,10 +80,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 };
 
-// void keyboard_post_init_user(void) {
-// 	rgblight_setrgb(255, 100, 0);
-// }
-
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         // QMK Logo and version information
