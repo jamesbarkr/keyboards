@@ -15,8 +15,7 @@ GRAVE_ESC_ENABLE = no 		# Escape key mods
 MAGIC_ENABLE = no			# Magic keycodes
 MUSIC_ENABLE = no			# Keyboard audio music
 COMBO_ENABLE = no			# Key combos
+CAPS_WORD_ENABLE = yes		# Turn on caps word
 
 SRC += ./connorbarkr.c \
-	   ./features/caps_word.c \
-	   ./features/custom_shift_keys.c \
 	   ./features/os_mode.c

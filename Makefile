@@ -1,8 +1,9 @@
 USER = connorbarkr
 
-KEYBOARDS = dactyl skeletyl kyria
+KEYBOARDS = dactyl skeletyl kyria dilemma
 PATH_dactyl = handwired/dactyl_manuform/5x6_5
 PATH_skeletyl = bastardkb/skeletyl
+PATH_dilemma = bastardkb/dilemma/3x5_3
 PATH_kyria = splitkb/kyria
 
 all: $(KEYBOARDS)
@@ -10,7 +11,7 @@ all: $(KEYBOARDS)
 .PHONY: $(KEYBOARDS)
 $(KEYBOARDS):
 	# init submodule
-	git submodule update --init --recursive
+	# git submodule update --init --recursive
 
 	# cleanup old symlinks
 	for f in $(KEYBOARDS); do rm -rf qmk_firmware/keyboards/$(PATH_$@)/keymaps/$(USER); done

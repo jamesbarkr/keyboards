@@ -40,7 +40,6 @@ const os_key_t os_mods[] = {
 	{QC_COMM, KC_RCTL, KC_RGUI},
 };
 
-uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
 uint8_t NUM_OS_KEYS = sizeof(os_keys) / sizeof(os_key_t);
 uint8_t NUM_OS_MODS = sizeof(os_mods) / sizeof(os_key_t);
 
@@ -50,8 +49,6 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
-	if (!process_caps_word(keycode, record)) { return false; }
-	if (!process_custom_shift_keys(keycode, record)) { return false; }
 	if (!process_os_mode(keycode, record, QC_OS)) { return false; }
 
 	switch (keycode) {
@@ -87,11 +84,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 	return process_record_keymap(keycode, record);
 }
 
-void matrix_scan_user(void) {
-	caps_word_task();
-}
-
-td_state_t cur_dance(qk_tap_dance_state_t *state) {
+td_state_t cur_dance(tap_dance_state_t *state) {
 	if (state->count == 1) {
 		if (state->interrupted || !state->pressed) {
 			return TD_SINGLE_TAP;
@@ -113,57 +106,12 @@ td_state_t cur_dance(qk_tap_dance_state_t *state) {
 	return TD_UNKNOWN;
 }
 
-static td_tap_t sft_tap_state = {
-	.is_press_action = true,
-	.state = TD_NONE
-};
-
 static td_tap_t swap_tap_state = {
 	.is_press_action = true,
 	.state = TD_NONE
 };
 
-void sft_finished(qk_tap_dance_state_t *state, void *user_data) {
-	sft_tap_state.state = cur_dance(state);
-	switch (sft_tap_state.state) {
-		case TD_SINGLE_TAP:
-			if (caps_word_get()) {
-				caps_word_set(false);
-				clear_oneshot_mods();
-			} else {
-				set_oneshot_mods(MOD_LSFT);
-			}
-			break;
-		case TD_SINGLE_HOLD:
-			register_code(KC_LSFT);
-			break;
-		case TD_DOUBLE_TAP:
-			caps_word_set(true);
-			break;
-		case TD_TRIPLE_TAP:
-			tap_code(KC_CAPS);
-			break;
-		default:
-			break;
-	}
-}
-
-void sft_reset(qk_tap_dance_state_t *state, void *user_data) {
-	switch (sft_tap_state.state) {
-		case TD_SINGLE_TAP:
-			break;
-		case TD_SINGLE_HOLD:
-			unregister_code(KC_LSFT);
-			break;
-		case TD_DOUBLE_TAP:
-		case TD_TRIPLE_TAP:
-		default:
-			break;
-	}
-	sft_tap_state.state = TD_NONE;
-}
-
-void swap_finished(qk_tap_dance_state_t *state, void *user_data) {
+void swap_finished(tap_dance_state_t *state, void *user_data) {
 	swap_tap_state.state = cur_dance(state);
 	switch (swap_tap_state.state) {
 		case TD_SINGLE_TAP:
@@ -194,7 +142,7 @@ void swap_finished(qk_tap_dance_state_t *state, void *user_data) {
 	}
 }
 
-void swap_reset(qk_tap_dance_state_t *state, void *user_data) {
+void swap_reset(tap_dance_state_t *state, void *user_data) {
 	switch (swap_tap_state.state) {
 		case TD_SINGLE_TAP:
 			break;
@@ -212,7 +160,11 @@ void swap_reset(qk_tap_dance_state_t *state, void *user_data) {
 	swap_tap_state.state = TD_NONE;
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
-	[OSFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sft_finished, sft_reset),
+tap_dance_action_t tap_dance_actions[] = {
 	[SWAP] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, swap_finished, swap_reset)
 };
+
+// this is here to disable the underglow layer indicator on the dilemma
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+	return false;
+}

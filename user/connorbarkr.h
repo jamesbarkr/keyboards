@@ -46,6 +46,7 @@ enum layer_names {
 	_SYM,
 	_NUM,
 	_MEDIA,
+	_MOUSE,
 };
 
 enum tap_dances {
@@ -86,6 +87,4 @@ typedef struct {
 #define QC_DOT MT(MOD_RALT, KC_DOT)
 #define QC_COMM MT(MOD_RCTL, KC_COMM)
 
-td_state_t cur_dance(qk_tap_dance_state_t *state);
-void sft_finished(qk_tap_dance_state_t *state, void *user_data);
-void sft_reset(qk_tap_dance_state_t *state, void *user_data);
+td_state_t cur_dance(tap_dance_state_t *state);
